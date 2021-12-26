@@ -1,1 +1,100 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-mcgpalette0: (
+    50 : #e6efff,
+    100 : #c0d6fe,
+    200 : #96bbfe,
+    300 : #6ba0fd,
+    400 : #4c8bfc,
+    500 : #2c77fc,
+    600 : #276ffc,
+    700 : #2164fb,
+    800 : #1b5afb,
+    900 : #1047fa,
+    A100 : #ffffff,
+    A200 : #f3f5ff,
+    A400 : #c0cdff,
+    A700 : #a7b8ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$cat-primary: mat.define-palette($md-mcgpalette0);
+$cat-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$cat-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$cat-theme: mat.define-light-theme((
+  color: (
+    primary: $cat-primary,
+    accent: $cat-accent,
+    warn: $cat-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($cat-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+
+:root {
+
+  // auth vars 
+  --body-bg-color: #F3F5F7;
+
+  --primary-color: #2C77FC;
+
+}
+
+html, body { height: 100%; }
+
+html {
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) { 
+    // Structure Block              
+    font-size: 85%;
+  }
+}
+
+body {
+  
+  // Structure Block 
+  margin: 0; 
+  background-color: var(--body-bg-color);
+
+  // Typography Block 
+  font-family: 'Montserrat', sans-serif; 
+}

@@ -1,0 +1,73 @@
+.form {
+    &__title {
+
+        // X-Large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) { 
+            // Structure Block
+            margin-bottom: 2.1rem !important;
+        }
+
+    }
+
+    &__actions {
+        .mat-button-base {
+            // Structure Block  
+            padding: .9rem .5rem;
+            min-width: auto;
+            box-shadow: none;
+
+            // Typography Block 
+            line-height: normal;
+            font-family: inherit;
+        }
+    }
+}
+
+
+.input-icon-group {
+    // Positioning Block 
+    position: relative;
+
+    // Structure Block
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__icon {   
+        // Positioning Block 
+        position: absolute;
+        left: 1rem;
+
+        &.lock {
+            left: 1.2rem
+        }
+    }
+
+
+    .form-control {
+        // Structure Block
+        padding: .9rem 0;
+        padding-left: 3rem;
+
+        &:not(.is-invalid) {
+            // Structure Block
+            border-color:#D4D4D4;
+        }
+        
+        
+        box-shadow: none;
+
+        // Typography Block 
+        font-size: .8rem;
+
+        // Typography Block 
+        transition: all .3s ease-in-out;
+
+        &:focus {
+            border-color: var(--primary-color);
+
+            // Typography Block 
+            transition: all .3s ease-in-out;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.logo {
+    img {
+
+        width: 280px;
+
+
+        // Medium devices (tablets, 768px and up) // Medium devices (tablets, less than 992px)
+        @media (min-width: 768px) and (max-width: 991.98px) { 
+            // Structure Block          
+            width: 206px;
+        }
+
+
+        // Small devices (landscape phones, less than 768px)
+        @media (max-width: 767.98px) { 
+            // Structure Block              
+            width: 200px;
+        }
+
+    }
+}
+
+
+.auth__login {
+    
+    // Structure Block 
+    padding: 2.5rem 0;
+
+    // Small devices (landscape phones, less than 768px)
+    @media (max-width: 767.98px) { 
+        // Structure Block 
+        padding: 1.5rem 0;
+    }
+
+    &__content {
+        // Structure Block 
+        margin: 2.5rem 0 5rem 0;
+        
+        // Large devices (desktops, 992px and up)
+        @media (min-width: 992px) { 
+            // Structure Block 
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+            background-color: #fff;
+        } 
+
+        // Medium devices (tablets, 768px and up) // Medium devices (tablets, less than 992px)
+        @media (min-width: 768px) and (max-width: 991.98px) { 
+
+            // Structure Block 
+            width: 70%;
+            margin: auto;
+        }
+        
+    }
+}
+
+

@@ -1,0 +1,35 @@
+.splash-screen {
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) { 
+        // Structure Block 
+        background-image: url(../../../../../../../assets/media/auth/img@2x.png);
+        background-size: cover;
+        background-position: center;
+    }  
+
+    &__txt {
+     
+                    
+        // Structure Block 
+        padding: 6rem  4.5rem;
+
+        // Large devices (desktops, less than 1200px)
+        @media (max-width: 1199.98px) { 
+            // Structure Block 
+            padding: 4rem  4.5rem;
+        }
+
+        // Large devices (desktops, 992px and up)
+        @media (min-width: 992px) { 
+            // Typography Block 
+            color: #fff;
+        }  
+
+        // Medium devices (tablets, less than 992px)
+        @media (max-width: 991.98px) { 
+            padding: 0;
+        }
+        
+    }
+}
