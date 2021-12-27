@@ -1,0 +1,22 @@
+.search {
+    // Positioning Block 
+    position: relative;
+
+    .btn {
+        // Positioning Block 
+        position: absolute;
+        left: 0.3rem;
+    }
+}
+
+.form-control {
+    // Structure Block
+    min-width: 500px;
+    padding-left: 3.5rem;
+    background-color: #F8F9FA;
+    border-color: transparent;
+
+    // TYpography Block 
+    font-size: .85rem;
+
+}

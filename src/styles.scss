@@ -98,3 +98,23 @@ body {
   // Typography Block 
   font-family: 'Montserrat', sans-serif; 
 }
+
+
+// begin:: global Style 
+.form-control,
+.btn {
+  // Structure Block 
+  box-shadow: none;
+
+  &:focus {
+    // Structure Block 
+    box-shadow: none;
+  }
+}
+
+.form-control {
+  &:focus {
+    border-color: var(--primary-color);
+  }
+}
+// end:: global Style 

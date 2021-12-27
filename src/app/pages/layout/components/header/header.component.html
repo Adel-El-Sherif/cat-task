@@ -1,0 +1,50 @@
+
+<!-- begin:: toolbar  -->
+<mat-toolbar class="py-1 px-2">
+    <mat-toolbar-row class="container-fluid">
+      <a routerLink="/" class="logo py-1 me-5">
+        <img height="52" src="assets/media/logo/logo.png" alt="Logo">
+      </a>
+      <span class="menu-spacer d-lg-none"></span>
+      <div class="d-none d-xl-block flex-grow-1">
+
+        <div class="d-flex align-items-center w-100 justify-content-between">
+
+          <!-- begin:: notification -->
+          <app-search class="ps-3"></app-search>
+          <!-- end:: notification -->
+
+
+          <!-- begin:: notification -->
+          <app-notification></app-notification>
+          <!-- end:: notification -->
+        </div>
+
+      </div>
+      <button class="d-xl-none" mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<!-- end:: toolbar  -->
+
+<!-- begin:: sidebar  -->
+<mat-sidenav-container fxFlexFill class="sidenav-container">
+    <mat-sidenav #sidenav [position]="'end'" [fixedInViewport]="true">
+      <mat-nav-list>
+        <a routerLink="/profile" mat-list-item>
+          <small class="mat-list-icon me-1">
+            <img class="" src="assets/media/header/islogin/icon/1.svg">
+          </small>
+          Profile
+        </a>
+        <a href="#" mat-list-item>      
+          <small class="mat-list-icon me-1">
+            <i class="fa fa-video-camera" aria-hidden="true"></i> 
+          </small>   
+          Photos
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+</mat-sidenav-container>
+<!-- begin:: sidebar  -->

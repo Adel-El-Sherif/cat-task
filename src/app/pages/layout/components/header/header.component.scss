@@ -1,0 +1,168 @@
+:host {
+
+  // Structure Block 
+  display: block;
+  background-color: #fff;
+  box-shadow: 0px 3px 6px #00000036;
+
+
+  // Positioning Block 
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 22;
+
+  
+  mat-toolbar {
+    // Positioning Block
+    z-index: 22;
+
+    // Modifire Block ;
+    transition: all .3s ease-in-out;
+
+    // Structure Block 
+    justify-content: center;
+
+    // Small devices (landscape phones, less than 768px)
+    @media (max-width: 767.98px) { 
+      padding: .5rem 0 !important;
+    }
+
+    .logo {
+      img {
+        // Small devices (landscape phones, less than 768px)
+        @media (max-width: 767.98px) { 
+          width: 200px;
+        }
+      }
+    }
+
+
+    .mat-button {
+      // Structure Block
+      margin-inline-start: 0.5rem;
+
+
+
+
+    // Modifire Block ;
+    transition: none;
+
+      // Typography Block
+      font-weight: bold;
+    }
+
+    .menu-spacer {
+      // Structure Block
+      flex: 1 1 auto;
+    }
+
+    // Structure Block
+    background: transparent;
+
+    &.defulat-header {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+    }
+
+    &.scrolled {
+      // Structure Block 
+      background: #fff;
+      box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+
+      // Typography Block 
+      color: #000;
+
+
+      // Modifire Block ;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  mat-sidenav,
+  mat-sidenav.md-locked-open,
+  mat-sidenav.md-closed.md-locked-open-add-active {
+    // Structure Block
+    min-width: 200px;
+    width: 267px;
+    max-width: 400px;
+  }
+
+  mat-sidenav {
+    // Structure Block
+    padding: 3rem 0;
+  }
+
+  .mat-icon {
+    // Structure Block
+    width: auto;
+
+    // Typography Block
+    font-size: 2.3rem;
+  }
+
+  .sidenav-container {
+    // Positioning Block
+    position: fixed;
+    top: 0;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+
+    // Modifier block
+    z-index: 9999;
+    visibility: hidden;
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+
+  ::ng-deep {
+    .mat-drawer-backdrop.mat-drawer-shown {
+      // Structure Block
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .sidenav__btn,
+    .mat-list-base .mat-list-item .mat-list-item-content,
+    .mat-list-base .mat-list-option .mat-list-item-content {
+      // Structure Block
+      padding: 0.6rem;
+      padding-inline-start: 2.5rem;
+
+      // Typography Block
+      font-size: 1rem;
+    }
+
+    .mat-list-base {
+      .mat-list-item {
+        // Structure Block
+        display: flex;
+        align-items: center;
+
+        .mat-list-item-content {
+          // Structure Block
+          width: 100%;
+        }
+
+        // Structure Block
+        height: auto;
+
+        // Typography Block
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  // Structure Block
+  height: auto;
+}
+

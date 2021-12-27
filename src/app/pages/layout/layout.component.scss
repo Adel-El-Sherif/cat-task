@@ -1,0 +1,15 @@
+.layout {
+
+    // Structure Block 
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+
+    &__body {
+
+        // Structure Block 
+        height: 100%;
+        padding-top: 5.5rem;
+        
+    }
+}
