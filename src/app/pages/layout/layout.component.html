@@ -5,11 +5,21 @@
   <!-- end:: header  -->
 
 
-  <div class="layout__body">
-    <div class="container-fluid">
-      <!-- begin:: body  -->
-      <router-outlet></router-outlet>
-      <!-- end:: body  -->
+  <div class="layout__body h-100">
+    <div class="container-fluid d-flex h-100">
+
+      <!-- begin:: side nav  -->
+      <side-nav class="d-none d-xl-block"></side-nav>
+      <!-- begin:: side nav  -->
+
+
+      <div class="px-xl-5">
+        <!-- begin:: body  -->
+        <router-outlet></router-outlet>
+        <!-- end:: body  -->
+
+
+      </div>
     </div>
   </div>
 

@@ -6,12 +6,10 @@ import { Router } from "@angular/router";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  isPayer!:boolean;
   
+  isSidebarOpen: boolean = false;
+
   @Output() public sidenavToggle = new EventEmitter();
-  defaultHeader = false;
-  scrolled: boolean = false;
-  showBlackIcon = false;
 
   constructor(
     private router:Router,
@@ -19,12 +17,15 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-
- 
-
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
   }
+
+
+  toggleSearchBar(): void {
+    this.isSidebarOpen = !this.isSidebarOpen
+  }
+
 }
 
 

@@ -3,7 +3,6 @@
   // Structure Block 
   display: block;
   background-color: #fff;
-  box-shadow: 0px 3px 6px #00000036;
 
 
   // Positioning Block 
@@ -22,6 +21,8 @@
 
     // Structure Block 
     justify-content: center;
+    box-shadow: 0px 3px 6px #00000036;
+    background: #fff !important;
 
     // Small devices (landscape phones, less than 768px)
     @media (max-width: 767.98px) { 
@@ -32,7 +33,7 @@
       img {
         // Small devices (landscape phones, less than 768px)
         @media (max-width: 767.98px) { 
-          width: 200px;
+          height: 45px;
         }
       }
     }
@@ -59,25 +60,6 @@
 
     // Structure Block
     background: transparent;
-
-    &.defulat-header {
-      background: #fff;
-      color: #000;
-      box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
-    }
-
-    &.scrolled {
-      // Structure Block 
-      background: #fff;
-      box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
-
-      // Typography Block 
-      color: #000;
-
-
-      // Modifire Block ;
-      transition: all .3s ease-in-out;
-    }
   }
 
   mat-sidenav,
@@ -92,6 +74,14 @@
   mat-sidenav {
     // Structure Block
     padding: 3rem 0;
+    width: 69px;
+    min-width: auto;
+
+    // Small devices (landscape phones, less than 768px)
+    @media (max-width: 767.98px) { 
+      // Structure Block
+      width: 64px;
+    }
   }
 
   .mat-icon {
@@ -106,7 +96,7 @@
     // Positioning Block
     position: fixed;
     top: 0;
-    bottom: 60px;
+    bottom: 0;
     left: 0;
     right: 0;
 
@@ -125,37 +115,7 @@
       // Structure Block
       background-color: rgba(0, 0, 0, 0.2);
     }
-
-    .sidenav__btn,
-    .mat-list-base .mat-list-item .mat-list-item-content,
-    .mat-list-base .mat-list-option .mat-list-item-content {
-      // Structure Block
-      padding: 0.6rem;
-      padding-inline-start: 2.5rem;
-
-      // Typography Block
-      font-size: 1rem;
-    }
-
-    .mat-list-base {
-      .mat-list-item {
-        // Structure Block
-        display: flex;
-        align-items: center;
-
-        .mat-list-item-content {
-          // Structure Block
-          width: 100%;
-        }
-
-        // Structure Block
-        height: auto;
-
-        // Typography Block
-        font-size: 1.1rem;
-        font-weight: 600;
-      }
-    }
+    
   }
 }
 

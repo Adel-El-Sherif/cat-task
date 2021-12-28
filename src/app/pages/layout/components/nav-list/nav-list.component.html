@@ -1,0 +1,8 @@
+<mat-selection-list #shoes [multiple]="false">
+    <mat-list-option [routerLink]="item.route" routerLinkActive="active" *ngFor="let item of navList">
+        <span class="shape1"></span>
+        <img class="img-fluid" [src]="item.iconPathActive" alt="Nav Icon">
+        <span class="shape2"></span>
+    </mat-list-option>
+</mat-selection-list>
+

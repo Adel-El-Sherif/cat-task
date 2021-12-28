@@ -13,6 +13,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { HeaderComponent } from './layout/components/header/header.component';
 import { NotificationComponent } from './layout/components/header/components/notification/notification.component';
 import { SearchComponent } from './layout/components/header/components/search/search.component';
+import { SideNavComponent } from './layout/components/side-nav/side-nav.component';
+import { UserImagComponent } from './layout/components/user-imag/user-imag.component';
+import { LogoutComponent } from './layout/components/logout/logout.component';
+import { NavListComponent } from './layout/components/nav-list/nav-list.component';
+import { SearchBarComponent } from './layout/components/header/components/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -21,6 +26,11 @@ import { SearchComponent } from './layout/components/header/components/search/se
     LayoutComponent,
     NotificationComponent,
     SearchComponent,
+    SideNavComponent,
+    UserImagComponent,
+    LogoutComponent,
+    NavListComponent,
+    SearchBarComponent,
   ],
   imports: [
     CommonModule,

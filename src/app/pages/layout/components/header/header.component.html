@@ -5,14 +5,14 @@
       <a routerLink="/" class="logo py-1 me-5">
         <img height="52" src="assets/media/logo/logo.png" alt="Logo">
       </a>
-      <span class="menu-spacer d-lg-none"></span>
+      <span class="menu-spacer d-xl-none"></span>
       <div class="d-none d-xl-block flex-grow-1">
 
         <div class="d-flex align-items-center w-100 justify-content-between">
 
-          <!-- begin:: notification -->
+          <!-- begin:: search form -->
           <app-search class="ps-3"></app-search>
-          <!-- end:: notification -->
+          <!-- end:: search form -->
 
 
           <!-- begin:: notification -->
@@ -21,29 +21,36 @@
         </div>
 
       </div>
+
+      <button (click)="toggleSearchBar()" class="btn d-xl-none me-2" type="button" id="button-addon1">
+        <img width="18" src="assets/media/icons/search-icon.svg" alt="Search">
+      </button>
+
       <button class="d-xl-none" mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
+
     </mat-toolbar-row>
 </mat-toolbar>
 <!-- end:: toolbar  -->
 
+
+
+<!-- begin:: search bar  -->
+<search-bar [class.open]="isSidebarOpen" class="d-xl-none"></search-bar>
+<!-- end:: search bar  -->
+
+
+
 <!-- begin:: sidebar  -->
 <mat-sidenav-container fxFlexFill class="sidenav-container">
-    <mat-sidenav #sidenav [position]="'end'" [fixedInViewport]="true">
+    <mat-sidenav #sidenav [position]="'start'" [fixedInViewport]="true">
       <mat-nav-list>
-        <a routerLink="/profile" mat-list-item>
-          <small class="mat-list-icon me-1">
-            <img class="" src="assets/media/header/islogin/icon/1.svg">
-          </small>
-          Profile
-        </a>
-        <a href="#" mat-list-item>      
-          <small class="mat-list-icon me-1">
-            <i class="fa fa-video-camera" aria-hidden="true"></i> 
-          </small>   
-          Photos
-        </a>
+
+        <!-- begin:: side nav  -->
+        <side-nav></side-nav>
+        <!-- begin:: side nav  -->
+
       </mat-nav-list>
     </mat-sidenav>
 </mat-sidenav-container>

@@ -1,0 +1,17 @@
+.aside {
+    // Structure Block 
+    background-color: #fff;
+    height: calc(100vh - 106px);
+    width: 69px;
+    border-radius: 8px;
+
+    // Small devices (landscape phones, less than 768px)
+    @media (max-width: 767.98px) { 
+        // Structure Block 
+        width: 64px;
+    }
+
+    // Positioning Block 
+    position: sticky;
+    top: 92px;
+}

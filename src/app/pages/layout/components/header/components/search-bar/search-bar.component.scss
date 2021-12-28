@@ -1,0 +1,31 @@
+:host {
+    // Structure Block 
+    display: block;
+
+    // Modifire Block
+    transform: translateY(-100%);
+    transition: all .3s ease-in-out;
+
+    // Positioning Block 
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    left: 0;
+    width: 100%;
+
+    &.open {
+        // Modifire Block
+        transform: none;
+        transition: all .3s ease-in-out;
+    }
+}
+
+.topbar {
+    // Structure Block 
+    box-shadow: 0 0 40px 0 rgb(82 63 105 / 20%);
+    border-top: 1px solid #eff0f6;
+    background: #fff;
+    padding: 0.5rem 1rem;
+
+
+}
