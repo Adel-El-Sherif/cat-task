@@ -117,4 +117,109 @@ body {
     border-color: var(--primary-color);
   }
 }
+
+.error {
+  // Typography Block 
+  font-size: 0.9rem;
+}
+
+// Begin mat snack bar ______________
+.mat-snack-bar-container {
+  // Structure Block 
+  background-color: #fff;
+  border-radius: 8px !important;
+  padding: 1.7rem !important;
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 4%), 0px 6px 10px 0px rgb(0 0 0 / 0%), 0px 1px 18px 0px rgb(0 0 0 / 10%);
+
+  // Typography Block
+  color: var(--primary-color);;
+  font-weight: bold;
+
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) { 
+      // Structure Block 
+      padding: 1.5rem !important;
+  }
+
+  .mat-simple-snackbar {
+      // Typography Block 
+      font-family: inherit;
+
+
+      & > span {
+
+          // Structure Block 
+          display: inline-flex;
+          align-items: center;
+
+          // Typography Block 
+          font-size: .85rem;
+
+          &::before {
+              content: "\f058";
+
+              // Typography Block 
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: 1.1rem;
+              color: #52aa21;
+              line-height: normal;
+
+              // Structure Block 
+              display: inline-block !important;
+              margin-right: .5rem;
+
+              [dir=rtl] & {
+                  // Structure Block 
+                  margin-right: 0;
+                  margin-left: .5rem;
+              }
+
+          }
+      }
+  }
+
+
+  &.error {
+      .mat-simple-snackbar {
+          & > span {
+              &::before {
+                  // Structure Block 
+                  content: "\f057";
+                  display: inline-block !important;
+
+                  // Typography Block 
+                  color: #d34016;
+              }
+          }
+      }
+  }
+}
+
+.mat-simple-snackbar-action {
+      button {
+
+          // Structure Block 
+          width: 31px;
+          height: 31px;
+          background: #ddd;
+          border-radius: 50% !important;
+
+          // Typography Block 
+          color: var(--primary-color);;
+          font-weight: bold;
+
+
+          // Structure Block 
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .mat-button-wrapper {
+              // Typography Block 
+              line-height: normal;
+          }
+  }
+}
+// End mat snack bar ______________
+
 // end:: global Style 

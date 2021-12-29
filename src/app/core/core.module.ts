@@ -4,15 +4,22 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { authInterCeptor } from './interceptoors/auth-interceptop/auth.interceptor';
 import { ErrorHandlerInterceptor } from './interceptoors/error-interceptors/error.interceptor';
 import { LoaderInterceptor } from './interceptoors/loader/loader.interceptor';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers : [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true,
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: authInterCeptor,
@@ -21,11 +28,6 @@ import { LoaderInterceptor } from './interceptoors/loader/loader.interceptor';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorHandlerInterceptor,
-      multi: true,
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoaderInterceptor,
       multi: true,
     },
   ]

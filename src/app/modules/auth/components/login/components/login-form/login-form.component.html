@@ -1,5 +1,5 @@
 <section class="login-form p-0 p-lg-5 text-center d-flex justify-content-center align-items-lg-center h-100">
-    <form class="form w-100">
+    <form class="form w-100" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
         
         <div class="form__title mb-4">
             <h2 class="h5 mb-0">SIGN IN</h2>
@@ -9,29 +9,58 @@
         <div class="form-group mb-3">
             <div class="input-icon-group">
                 <img class="input-icon-group__icon" src="assets/media/icons/email.svg" alt="Email icon">
-                <input type="email" class="form-control rounded-pill pe-3 is-invalid" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input
+                    type="email"
+                    email
+                    ngModel
+                    required
+                    #email="ngModel"
+                    name="email"
+                    id="email"
+                    (change)="formError= false"
+                    aria-describedby="emailHelp"
+                    class="form-control rounded-pill pe-3"
+                    [class.is-invalid]="(email.touched && !email.valid) || formError"
+                >
             </div>
-            <div class="invalid-feedback">
-                Please enter a valid email.
+            <div class="error text-danger mt-1" *ngIf="(email.touched && !email.valid) || (formError && !email.valid)">
+                <small *ngIf="email.errors?.required">Email is required.</small>
+                <small *ngIf="email.errors?.email">Please enter a valid email.</small>                
             </div>
         </div>
         <!-- end:: email  -->
         <!-- is-invalid -->
 
         <!-- begin:: password  -->
-        <div class="form-group form-group--icon">
+        <div class="form-group form-group--icon mb-4">
             <div class="input-icon-group">
                 <img width="12" class="input-icon-group__icon lock" src="assets/media/icons/lock.svg" alt="Lock icon">
-                <input type="password" class="form-control rounded-pill pe-3" id="exampleInputPassword1">
+                <input 
+                    type="password" 
+                    ngModel
+                    required
+                    #password="ngModel"
+                    autocomplete="true"
+                    name="password"
+                    id="password"
+                    (change)="formError= false"
+                    class="form-control rounded-pill pe-3"
+                    id="exampleInputPassword1"
+                    [class.is-invalid]="(password.touched && !password.valid) || formError"
+                >
             </div>
-            <div class="invalid-feedback">
-                ....
+            <div class="error text-danger mt-1" *ngIf="(password.touched && !password.valid) || (formError && !password.valid)">
+                <small *ngIf="password.errors?.required">password is required.</small>
             </div>
         </div>
         <!-- end:: password  -->
 
+        <div class="error text-danger mt-1" *ngIf="serverSideError">
+            <small>The email address or password is incorrect.</small>
+        </div>
+        
         <!-- begin:: form action  -->
-        <div class="form__actions mt-4 py-3">
+        <div class="form__actions pt-4">
             <button mat-raised-button color="primary" class="w-100 rounded-pill">LOGIN</button>
         </div>
         <!-- end:: form action  -->

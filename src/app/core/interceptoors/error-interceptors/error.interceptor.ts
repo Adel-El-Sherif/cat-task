@@ -12,6 +12,7 @@ import {
 } from "rxjs";
 import { catchError } from "rxjs/operators";
 import { Router } from "@angular/router";
+import { MessagesService } from "src/app/shared/services/messages/messages.service";
 
 /**
  * Adds a default error handler to all requests.
@@ -20,7 +21,10 @@ import { Router } from "@angular/router";
     providedIn: "root",
 })
 export class ErrorHandlerInterceptor implements HttpInterceptor {
-    constructor(private router: Router) { }
+    constructor(
+        private router: Router,
+        private _MessagesService: MessagesService
+    ) { }
 
     intercept(
         request: HttpRequest<any>,
@@ -54,6 +58,8 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
 
             // logout when unauthenticated
             if (response.status === 401) {
+                this._MessagesService.openErrorSnackBar(response.error?.error);
+                
                 let clearedData = ["user", "token"];
                 clearedData.forEach((element) => {
                     localStorage.removeItem(element);

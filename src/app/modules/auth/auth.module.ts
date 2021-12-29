@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SplashScreenComponent } from './components/login/components/splash-screen/splash-screen.component';
 import { LoginFormComponent } from './components/login/components/login-form/login-form.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     SplashScreenComponent,
   ],
   imports: [
+    FormsModule,
     CommonModule,
     SharedModule,
     AuthRoutingModule

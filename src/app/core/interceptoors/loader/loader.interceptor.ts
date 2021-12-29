@@ -10,17 +10,14 @@ import { finalize, tap } from 'rxjs/operators';
     providedIn: 'root'
 })
 export class LoaderInterceptor implements HttpInterceptor {
-    
+
     count = 0;
     
     constructor(private spinner: NgxSpinnerService) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        if ((req.url.includes('photo/upload')) || (req.url.includes('video/upload'))) {
-        } else {
-            this.spinner.show()
-            this.count++;
-        }
+        this.spinner.show()
+        this.count++;
         return next.handle(req)
             .pipe(tap(
             ), finalize(() => {
