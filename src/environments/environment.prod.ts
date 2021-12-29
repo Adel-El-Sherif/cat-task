@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiURL: 'https://home.phi-pt.cat-sw.com/api/'
 };

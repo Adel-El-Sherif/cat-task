@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 
@@ -8,10 +9,12 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [],
   imports: [
     CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    NgxSpinnerModule
   ],
   exports: [
-    MatButtonModule
+    MatButtonModule,
+    NgxSpinnerModule
   ]
 })
 export class SharedModule { }
