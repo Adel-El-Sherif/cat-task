@@ -1,0 +1,216 @@
+
+@import 'functions';
+
+
+
+// ________ 1. start Set a rem font size with pixel fallback ______
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+// Usage _______
+// p {
+//   @include font-size(14px)
+// }
+
+// Output ______
+// p {
+//   font-size: 14px; //Will be overridden if browser supports rem
+//   font-size: 0.8rem;
+// }
+// ________ end Set a rem font size with pixel fallback ______
+
+
+
+
+
+// ________ 1. start Breakpoints ______
+// begin:: Max-width
+@mixin bp-max-1200 {
+    @media only screen and ( max-width: 1199.98px ) {
+        @content;
+    }
+}
+
+@mixin bp-max-992 {
+    @media only screen and ( max-width: 991.98px ) {
+        @content;
+    }
+}
+  
+@mixin bp-max-768 {
+    @media only screen and ( max-width: 767.98px ) {
+        @content;
+    }
+}
+
+@mixin bp-max-ex-576 {
+    @media only screen and ( max-width: 575.98px ) {
+        @content;
+    }
+}
+// end:: Max-width
+
+
+
+// begin:: min-width
+@mixin bp-min-1200 {
+    @media only screen and ( min-width: 1200px ) {
+        @content;
+    }
+}
+
+@mixin bp-min-992 {
+    @media only screen and ( min-width: 992px ) {
+        @content;
+    }
+}
+  
+@mixin bp-min-768 {
+    @media only screen and ( min-width: 768px ) {
+        @content;
+    }
+}
+
+@mixin bp-min-ex-576 {
+    @media only screen and ( min-width: 576px ) {
+        @content;
+    }
+}
+// end:: min-width
+// Usage _____
+// .sidebar {
+//   @include bp-max-1200 {
+//     width: 100%;
+//     float: none;
+//     margin: 0;
+//   }
+// }
+
+// Output ______
+// /.sidebar {
+//     @media only screen and (max-width: 30){
+//       .sidebar{width: 100%; float: none; margin: 0;}
+//     }
+//   }
+// ________ end Breakpoints ______
+
+
+
+
+
+
+// ________ 3. start Animations and keyframes______
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};      
+}
+
+// Usage _____
+// @include keyframes(slide-down) {
+//     0% { opacity: 1; }
+//     90% { opacity: 0; }
+// }
+  
+// .element {
+//     width: 100px;
+//     height: 100px;
+//     background: black;
+//     @include animation('slide-down 5s 3');
+// }
+
+// ________ end Animations and keyframes ______
+
+
+
+
+// ________ 4. start Transitions______
+// new mixin for transition
+@mixin transition( $property: all, $delay: .3s, $duration: 0s, $function: ease-in-out ) {
+    transition: $property $delay $duration $function;
+    -webkit-transition: $property $delay $duration $function;
+    -moz-transition: $property $delay $duration $function;
+    -ms-transition: $property $delay $duration $function;
+    -o-transition: $property $delay $duration $function;
+}
+
+// old mixin for transition
+// @mixin transition($args...) {
+//     -webkit-transition: $args;
+//     -moz-transition: $args;
+//     -ms-transition: $args;
+//     -o-transition: $args;
+//     transition: $args;
+// }
+
+// Usage _____
+// a {
+//     color: gray;
+//     @include transition(color .3s ease);
+//     &:hover {
+//       color: black;
+//     }
+// }
+// ________ end Transitions ______
+
+
+
+// ________ 6. start overlay ______
+//overlay mixin //
+@mixin overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    top: 0;
+}
+
+// Usage _____
+// a {
+//     color: gray;
+//     @include overlay;
+// }
+// ________ end overlay ______
+
+
+
+// ________ 7. start prefixer ______
+//overlay mixin //
+//prefixer mixin //
+@mixin prefixer ($property, $value, $prefixes: () ){
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property} : $value;
+    }
+    #{$property} : $value;
+}
+
+// Usage _____
+// .parent {
+//     // @include prefixer(box-shadow, 10px 10px 10px, (webkit moz o) ) ;
+//     // @include prefixer(animation, toggle 2s infinite linear, (webkit moz o) ) ;
+// }
+// ________ end overlay ______

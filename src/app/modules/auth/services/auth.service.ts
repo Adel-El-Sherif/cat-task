@@ -76,7 +76,7 @@ export class AuthService {
    * @param token 
    * @description Set Token 
    */
-  setToken(token: string) {
+  setToken(token: any) {
     localStorage.setItem('token', token);
   }
 
@@ -93,6 +93,6 @@ export class AuthService {
    * @description Set user data to local Storage
    */
   setUser(user: User) {
-    localStorage.setItem('token', JSON.stringify(user));
+    localStorage.setItem('user', JSON.stringify(user));
   }
 }

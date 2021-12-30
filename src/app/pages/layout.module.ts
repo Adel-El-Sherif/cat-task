@@ -18,6 +18,7 @@ import { UserImagComponent } from './layout/components/user-imag/user-imag.compo
 import { LogoutComponent } from './layout/components/logout/logout.component';
 import { NavListComponent } from './layout/components/nav-list/nav-list.component';
 import { SearchBarComponent } from './layout/components/header/components/search-bar/search-bar.component';
+import { ConfirmationDialogModule } from '../shared/modules/confirmation-dialog/confirmation-dialog.module';
 
 
 @NgModule({
@@ -37,12 +38,13 @@ import { SearchBarComponent } from './layout/components/header/components/search
     SharedModule,
     MatListModule,
     MatIconModule,
-    MatLayoutModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    PagesRoutingModule,
     MatMenuModule,
-    MatSelectModule
+    MatLayoutModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    PagesRoutingModule,
+    ConfirmationDialogModule
   ],
 })
 export class LayoutModule { }

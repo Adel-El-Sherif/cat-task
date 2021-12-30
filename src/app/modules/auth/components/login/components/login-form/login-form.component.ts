@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginData } from 'src/app/modules/auth/models/login-data/login-data';
+import { User } from 'src/app/modules/auth/models/user/user';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
 @Component({
@@ -14,6 +16,7 @@ export class LoginFormComponent implements OnInit {
   serverSideError: boolean = false;
 
   constructor(
+    private _Router: Router,
     private _AuthService: AuthService
   ) { }
 
@@ -42,8 +45,12 @@ export class LoginFormComponent implements OnInit {
    * @param data 
    */
   login(data: LoginData) {
-    this._AuthService.login(data).subscribe(res => {
-      // ....
+    this._AuthService.login(data).subscribe((res: User) => {
+
+      this._AuthService.setUser(res);
+      this._AuthService.setToken(res.access_token);
+      this._Router.navigate(['/'])
+
     }, error => {
       if(error.status == 401) {
         this.formError = true;
@@ -51,7 +58,5 @@ export class LoginFormComponent implements OnInit {
       }
     })
   }
-
-
 
 }

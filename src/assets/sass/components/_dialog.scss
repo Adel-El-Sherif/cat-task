@@ -1,0 +1,76 @@
+
+.custom-dialog-container {
+    max-width: 100% !important;
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) { 
+        max-width: 544px !important;
+    }  
+
+    .mat-dialog-container {
+
+        overflow: visible;
+        padding: 0;
+        box-shadow: none;
+        
+        .close-btn {
+            padding: 12px 24px;
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 6px;
+
+            img {
+                width: 1rem;
+            }
+        }
+
+        .mat-dialog-content  {
+            margin: 0;
+            max-height: 80vh;
+        }
+
+    }
+    &.bg-none {
+        .mat-dialog-container  {
+            background: none;
+            position: relative;
+
+
+            .dialog__content {
+                background-color: #fff;
+                border-radius: $mainRounded;
+            }
+        }
+    }
+
+    // X-Small devices (portrait phones, less than 576px)
+    @include bp-max-ex-576 {
+        width: 100% !important;
+    }
+
+    &.confirmation-dialog {
+
+        @include bp-max-1200  {
+            width: 50% !important;
+        }
+        @include bp-max-ex-576 {
+            width: 100% !important;
+        }
+
+        .mat-dialog-content {
+            overflow: hidden;
+        }
+    
+    }
+}
+
+.cdk-overlay-dark-backdrop {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.mat-dialog-actions {
+    min-height: auto !important;
+}

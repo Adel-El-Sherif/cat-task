@@ -1,0 +1,35 @@
+  <!-- begin dialog header -->
+  <button mat-button mat-dialog-close class="btn close-btn w-auto ms-auto">
+    <img src="assets/media/dialog/cancel.svg" alt="Close Icon">
+  </button>
+  <!-- end dialog header -->
+
+  <!-- begin dialog content -->
+  <div mat-dialog-content class="px-0 mx-3">
+    <div class="dialog__content">
+
+        <ng-container *ngIf="data.title">
+            <h5 class="d-block mb-4 dialog__title">
+                {{ data.title }}
+            </h5>
+        </ng-container>
+        
+        <p>{{ data.message }}</p>
+
+        <!-- __________ begin mat dialog-actions _________ -->
+        <div mat-dialog-actions class="d-flex justify-content-end align-items-center mt-3 mt-md-4 mt-lg-5 mb-0 p-0">
+            <button
+                mat-button
+                class="btn mt-0 mx-4 mx-1 p-0 mx-1 skip px-2 mb-0"
+                (click)="cancel()"
+                >
+                <small>Cancel</small>
+            </button>
+            <button class="px-4" mat-raised-button color="primary" (click)="confirm()">Confirm</button>
+        </div>
+        <!-- __________ end mat dialog actions _________ -->
+
+    </div>
+  </div>
+  <!-- end dialog content -->
+  <!-- ____ end dialog ________ -->

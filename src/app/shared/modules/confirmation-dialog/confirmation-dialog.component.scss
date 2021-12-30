@@ -1,0 +1,68 @@
+
+$hoverColor : #51b5fd;
+
+.dialog__content {
+    // Structure Block
+    padding: 3.5rem;
+
+    // Medium devices (tablets, less than 992px)
+    @media (max-width: 991.98px) {
+        // Structure Block  
+        padding: 2rem;
+    }
+
+    .mat-button-wrapper {
+
+    }
+}
+
+
+
+:host {
+    ::ng-deep {
+
+        .mat-button {
+
+            // Structure Block 
+            margin-bottom: 9px;
+            min-width: auto;
+
+            .mat-button-wrapper {
+
+                // Typography Block 
+                line-height: normal;
+            }
+        }
+
+     
+    }
+}
+
+
+
+.skip {
+    // Modifier Block
+    transition: all .3s ease-in-out;
+
+    // Typography Block
+    text-decoration: underline;
+    &:hover {
+        // Typography Block
+        color: $hoverColor;
+            
+        // Modifier Block
+        transition: all .3s ease-in-out;
+    }
+}
+
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+    // Structure Block 
+    border-radius: var(--main-rounded);
+    background:  var(--main-gradient-bg);
+}
+
+
+

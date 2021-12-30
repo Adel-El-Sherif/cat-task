@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfirmationDialogComponent } from 'src/app/shared/modules/confirmation-dialog/confirmation-dialog.component';
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: 'logout',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public _MatDialog: MatDialog,
+  ) { }
 
   ngOnInit(): void {
   }
 
+
+
+  //  A function that opens Confirmation Module
+  confirmDialog() {
+    const confirmDialog = this._MatDialog.open(ConfirmationDialogComponent, {
+      panelClass: ['custom-dialog-container', 'bg-none'],
+      data: {
+        title: 'Logout',
+        message: 'Are you sure ?'
+      }
+    });
+  }
+
+
+  logout(): void {
+
+  }
 }

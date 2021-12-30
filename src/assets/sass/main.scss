@@ -1,0 +1,40 @@
+
+// utilities imports
+@import 'utilities/variables',
+        'utilities/functions',
+        'utilities/mixins',
+        'utilities/text',
+        'utilities/classes';
+
+
+
+// base imports
+@import 'base/reset',
+        'base/typography',
+        'base/global'
+;
+
+
+// layout imports
+@import 'layout/grid',
+        'layout/header',
+        'layout/footer',
+        'layout/sidebar',
+        'layout/forms'
+;
+
+// components imports
+@import 'components/buttons',
+        'components/carousel',
+        'components/toastr',
+        'components/slider',
+        'components/dialog',
+        'components/borders'
+;
+
+// pages imports
+@import 'pages/home';
+
+
+// themes imports
+@import 'themes/theme';

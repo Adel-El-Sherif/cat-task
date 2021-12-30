@@ -1,0 +1,21 @@
+.form-control,
+.btn {
+  // Structure Block 
+  box-shadow: none;
+
+  &:focus {
+    // Structure Block 
+    box-shadow: none;
+  }
+}
+
+.form-control {
+  &:focus {
+    border-color: var(--primary-color);
+  }
+}
+
+.error {
+  // Typography Block 
+  font-size: 0.9rem;
+}
