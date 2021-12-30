@@ -59,7 +59,6 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
             // logout when unauthenticated
             if (response.status === 401) {
                 this._MessagesService.openErrorSnackBar(response.error?.error);
-                
                 let clearedData = ["user", "token"];
                 clearedData.forEach((element) => {
                     localStorage.removeItem(element);

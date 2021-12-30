@@ -68,3 +68,11 @@ $cat-theme: mat.define-light-theme((
 @include mat.all-component-themes($cat-theme);
 
 /* You can add global styles to this file, and also import other style files */
+
+
+:root {
+  // auth vars 
+  --body-bg-color: #F3F5F7;
+
+  --primary-color: #2C77FC;
+}

@@ -10,8 +10,8 @@ import {
 })
 export class MessagesService {
 
-  private horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   private verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  private horizontalPosition: MatSnackBarHorizontalPosition = 'start';
 
   constructor(private _snackBar: MatSnackBar,) { }
 

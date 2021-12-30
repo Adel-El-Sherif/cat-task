@@ -58,7 +58,6 @@ export class AuthService {
    */
    logout() {
     const URL = `${this.apiUrl}auth/logout`;
-    localStorage.clear();
     return this._HttpClient.post(URL,{});
   }
 
@@ -67,7 +66,7 @@ export class AuthService {
    * @returns 
    * @description Get user token
    */
-  getToken(): string | null {
+  getToken(): any {
     return localStorage.getItem('token');
   }
 
@@ -95,4 +94,42 @@ export class AuthService {
   setUser(user: User) {
     localStorage.setItem('user', JSON.stringify(user));
   }
+
+  /**
+ * @returns {User}
+ * @description Refresh expired token
+ */
+   refreshToken(): Observable<User> {
+    const URL = `${this.apiUrl}auth/refresh`;
+    return (this._HttpClient.post(URL,{}) as Observable<User>);
+  }
+
+
+  /**
+   * @description Check if the token is expired 
+   */
+  getTokenExpireDate() {
+    const token: string | null = localStorage.getItem('token');
+    if (token) {
+      let JWT_arr: any[] = token.split('.');
+      let JWT_str = JWT_arr[1]; 
+      let JWT_obj_str;
+      JWT_obj_str = atob(JWT_str);
+      let JWT_obj = JSON.parse(JWT_obj_str);
+      let exp = JWT_obj.exp;
+      let exp_date: any = new Date(exp * 1000);
+      let current_date: any = new Date();
+      let should_refresh_token: any = (exp_date - current_date) < 15000;
+
+      if (should_refresh_token) {
+        this.refreshToken().subscribe((user: User) => {
+            this.setUser(user);
+            this.setToken(user.access_token);
+          })
+      }
+
+    }
+  }
+
+
 }

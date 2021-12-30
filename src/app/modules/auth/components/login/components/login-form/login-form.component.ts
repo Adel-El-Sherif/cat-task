@@ -45,12 +45,11 @@ export class LoginFormComponent implements OnInit {
    * @param data 
    */
   login(data: LoginData) {
-    this._AuthService.login(data).subscribe((res: User) => {
+    this._AuthService.login(data).subscribe((user: User) => {
 
-      this._AuthService.setUser(res);
-      this._AuthService.setToken(res.access_token);
+      this._AuthService.setUser(user);
+      this._AuthService.setToken(user.access_token);
       this._Router.navigate(['/'])
-
     }, error => {
       if(error.status == 401) {
         this.formError = true;

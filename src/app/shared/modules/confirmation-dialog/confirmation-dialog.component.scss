@@ -1,5 +1,5 @@
 
-$hoverColor : #51b5fd;
+$hoverColor : var(--primary-color);
 
 .dialog__content {
     // Structure Block
@@ -11,16 +11,12 @@ $hoverColor : #51b5fd;
         padding: 2rem;
     }
 
-    .mat-button-wrapper {
-
-    }
 }
 
 
 
 :host {
     ::ng-deep {
-
         .mat-button {
 
             // Structure Block 
@@ -33,8 +29,6 @@ $hoverColor : #51b5fd;
                 line-height: normal;
             }
         }
-
-     
     }
 }
 
@@ -54,15 +48,5 @@ $hoverColor : #51b5fd;
         transition: all .3s ease-in-out;
     }
 }
-
-.mat-flat-button.mat-primary,
-.mat-raised-button.mat-primary,
-.mat-fab.mat-primary,
-.mat-mini-fab.mat-primary {
-    // Structure Block 
-    border-radius: var(--main-rounded);
-    background:  var(--main-gradient-bg);
-}
-
 
 
