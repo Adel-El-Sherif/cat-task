@@ -9,17 +9,21 @@
     <div class="container-fluid d-flex h-100">
 
       <!-- begin:: side nav  -->
-      <side-nav class="d-none d-xl-block"></side-nav>
+      <side-nav [start]="true" class="d-none d-xl-block"></side-nav>
       <!-- begin:: side nav  -->
 
 
-      <div class="px-xl-5">
+      <div class="px-xl-5 w-100">
         <!-- begin:: body  -->
         <router-outlet></router-outlet>
         <!-- end:: body  -->
-
-
       </div>
+
+
+      <!-- begin:: side nav  -->
+      <side-nav [end]="true" class="d-none d-xl-block"></side-nav>
+      <!-- begin:: side nav  -->
+
     </div>
   </div>
 

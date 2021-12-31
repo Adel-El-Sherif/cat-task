@@ -1,0 +1,51 @@
+<section *ngIf="initChart" class="chart-card">
+
+    <div class="total-num p-4">
+        <h4 class="key">Total Number of Patient</h4>
+        <h2 class="val h1 fw-bold">
+            {{ numberOfPatients?.total_number_of_patients }}
+        </h2>
+    </div>
+
+    <!-- begin:: chart  -->
+    <div>
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [xaxis]="chartOptions.xaxis"
+          [yaxis]="chartOptions.yaxis"
+          [dataLabels]="chartOptions.dataLabels"
+          [stroke]="chartOptions.stroke"
+          [legend]="chartOptions.legend"
+          [fill]="chartOptions.fill"
+          [states]="chartOptions.states"
+          [tooltip]="chartOptions.tooltip"
+          [colors]="chartOptions.colors"
+          [noData]="chartOptions.noData"
+          [markers]="chartOptions.markers"
+          [grid]="chartOptions.grid"
+          [plotOptions]="chartOptions.plotOptions"
+        ></apx-chart>
+    </div>
+    <!-- end:: chart  -->
+
+    <div class="percentage p-4 d-flex flex-column justify-content-end text-end">
+
+        <div class="decrease mb-1 d-flex align-items-center">
+            <span class="me-2 h4 fw-600 mb-0">
+                {{ numberOfPatients?.patients_per_year_percentage }}%
+            </span>
+            <img src="assets/media/dashboard/chart/decrease.svg" alt="">
+        </div>
+
+        <div class="increase d-flex align-items-center">
+            <span class="me-2 h4 fw-600 mb-0">
+                {{ numberOfPatients?.patients_per_year_percentage }}%
+            </span>
+            <img src="assets/media/dashboard/chart/increase.svg" alt="">
+        </div>
+
+    </div>
+
+
+</section>

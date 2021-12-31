@@ -1,0 +1,9 @@
+<button class="tab mb-3 active fw-bold" mat-button aria-label="Example icon button with a menu icon">
+    All
+</button>
+
+<ng-container *ngFor="let iconPath of tabIcons">
+    <button class="tab mb-3" mat-button aria-label="Example icon button with a menu icon">
+        <img [src]="iconPath" alt="Icon">
+    </button>
+</ng-container>

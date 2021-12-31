@@ -1,0 +1,39 @@
+.chart-card {
+
+    // Structure Block 
+    background-color: var(--primary-color);
+
+    // Typography Block 
+    color: #fff;
+
+
+    // Positioning Block 
+    position: relative;
+
+
+    ::ng-deep {
+        .apexcharts-tooltip {
+            // Structure Block 
+            background: transparent;
+            border: 0;
+
+            
+            // Typography Block 
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .apexcharts-tooltip-text-y-label {
+            // Stucture Block 
+            display: none;
+        }
+    }
+
+
+    .percentage {
+        // Positioning Block 
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}

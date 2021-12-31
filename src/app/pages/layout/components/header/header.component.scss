@@ -9,6 +9,7 @@
   position: fixed;
   right: 0;
   left: 0;
+  top: 0;
   z-index: 22;
 
   
@@ -124,5 +125,57 @@
 .mat-toolbar-single-row {
   // Structure Block
   height: auto;
+}
+
+
+.main-header-menu-icon {
+  // Structure Block
+  margin-right: .7rem;
+  width: 28px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+
+  span {
+    // Structure Block
+    display: block;
+    position: relative;
+    width: 28px;
+    height: 2px;
+    background-color: #2f395f;
+    border-radius: 3px;
+
+    // Modfire Block 
+    transition: all 0.2s ease-in-out;
+
+    &::after,
+    &::before {
+      content: '';
+      // Positioning Block 
+      position: absolute;
+      left: 0;
+
+      // Structure Block
+      width: 15px;
+      height: 2px;
+      background-color: #2f395f;
+      border-radius: 3px;
+
+      // Modfire Block 
+      transition: all 0.2s ease-in-out;
+    };
+
+    &::before {
+      // Positioning Block 
+      top: -6px;
+    }
+
+    &::after {
+      // Positioning Block 
+      bottom: -6px;
+    }
+
+
+  }
 }
 

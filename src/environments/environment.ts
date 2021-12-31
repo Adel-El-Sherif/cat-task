@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://home.phi-pt.cat-sw.com/api/'
+  apiURL: 'https://home.phi-pt.cat-sw.com/api/',
+  apiAdminURL: 'https://home.phi-pt.cat-sw.com/api/admin/'
 };
 
 /*

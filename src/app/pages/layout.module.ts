@@ -19,6 +19,7 @@ import { LogoutComponent } from './layout/components/logout/logout.component';
 import { NavListComponent } from './layout/components/nav-list/nav-list.component';
 import { SearchBarComponent } from './layout/components/header/components/search-bar/search-bar.component';
 import { ConfirmationDialogModule } from '../shared/modules/confirmation-dialog/confirmation-dialog.module';
+import { SideTabsComponent } from './layout/components/header/components/side-tabs/side-tabs.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { ConfirmationDialogModule } from '../shared/modules/confirmation-dialog/
     LogoutComponent,
     NavListComponent,
     SearchBarComponent,
+    SideTabsComponent,
   ],
   imports: [
     CommonModule,

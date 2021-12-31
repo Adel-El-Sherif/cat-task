@@ -6,6 +6,11 @@ html {
       // Structure Block              
       font-size: 87%;
     }
+
+
+    // Positioning Block 
+    // top: auto !important;
+
 }
   
 body {
@@ -25,5 +30,13 @@ a {
     &:hover {
         // Modifier Block   
         transition: all .3s ease-in-out;
+    }
+}
+
+.section-title {
+    h2 {
+        // Typography Block 
+        font-size: 1.4rem;
+        color: $secondaryColor;
     }
 }

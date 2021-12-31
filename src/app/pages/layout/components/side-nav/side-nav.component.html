@@ -1,25 +1,32 @@
 <aside class="aside py-4 d-flex flex-column">
 
 
-    <div class="aside__header px-2">
-        <!-- begin:: user image  -->
-        <user-imag></user-imag>
-        <!-- end:: user image  -->
-    </div>
+    <ng-container *ngIf="start">
+        <div class="aside__header px-2">
+            <!-- begin:: user image  -->
+            <user-imag></user-imag>
+            <!-- end:: user image  -->
+        </div>
+    
+    
+        <div class="aside__body mt-4 pt-2">
+            <!-- begin:: nav list  -->
+            <nav-list></nav-list>
+            <!-- end:: nav list  -->
+        </div>
+    
+    
+        <div class="aside__footer mt-auto px-2">
+            <!-- begin:: logout image  -->
+            <logout></logout>
+            <!-- end:: logout image  -->
+        </div>
+    </ng-container>
+    
 
-
-    <div class="aside__body mt-4 pt-2">
-        <!-- begin:: nav list  -->
-        <nav-list></nav-list>
-        <!-- end:: nav list  -->
-    </div>
-
-
-    <div class="aside__footer mt-auto px-2">
-        <!-- begin:: logout image  -->
-        <logout></logout>
-        <!-- end:: logout image  -->
-    </div>
+    <ng-container *ngIf="end">
+        <side-tabs></side-tabs>
+    </ng-container>
 
 </aside>
 

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { MessagesService } from 'src/app/shared/services/messages/messages.service';
 import { environment } from 'src/environments/environment';
 import { LoginData } from '../models/login-data/login-data';
 import { Me } from '../models/me/me';
@@ -15,7 +16,8 @@ export class AuthService {
   apiUrl: string = environment.apiURL;
 
   constructor(
-    private _HttpClient: HttpClient
+    private _HttpClient: HttpClient,
+    private _MessagesService: MessagesService
   ) {   }
 
 
@@ -125,6 +127,8 @@ export class AuthService {
         this.refreshToken().subscribe((user: User) => {
             this.setUser(user);
             this.setToken(user.access_token);
+          }, error => {
+            this._MessagesService.openErrorSnackBar(error.error)
           })
       }
 
