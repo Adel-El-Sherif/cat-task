@@ -125,6 +125,11 @@
 .mat-toolbar-single-row {
   // Structure Block
   height: auto;
+
+  // X-Small devices (portrait phones, less than 576px)
+  @media (max-width: 575.98px) { 
+    padding: 0 7px;
+  }
 }
 
 
@@ -142,7 +147,7 @@
     position: relative;
     width: 28px;
     height: 2px;
-    background-color: #2f395f;
+    background-color: #000;
     border-radius: 3px;
 
     // Modfire Block 
@@ -158,7 +163,7 @@
       // Structure Block
       width: 15px;
       height: 2px;
-      background-color: #2f395f;
+      background-color: #000;
       border-radius: 3px;
 
       // Modfire Block 

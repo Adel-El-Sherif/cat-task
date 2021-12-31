@@ -1,4 +1,36 @@
 .user-img {
+
+    // Positioning Block 
+    position: relative;
+
+    .circle {
+        // Structure BLock 
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 2px solid #FF5A5A;
+        background: #fff;
+
+        // Small devices (landscape phones, less than 768px)
+        @media (max-width: 767.98px) { 
+            // Structure BLock 
+            width: 8px;
+            height: 8px;
+            border: 2px solid #FF5A5A;
+
+        }
+
+
+        // Positioning Block 
+        position: absolute;
+        right: -1px;
+        top: -1px;
+
+        // Modfire Block
+
+    }
+
+
     img {
         // Structure BLock 
         width: 52px;

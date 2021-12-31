@@ -98,7 +98,6 @@ export class AreaChartComponent implements OnInit {
           inverseColors: true,
           opacityFrom: 1,
           opacityTo: .2,
-          // stops: [0, 50, 100],
           colorStops: []
         }
       },
@@ -120,8 +119,6 @@ export class AreaChartComponent implements OnInit {
       stroke: {
         lineCap: 'butt',
         curve: ['smooth'],
-
-        // curve: 'smooth',
         show: true,
         width: 3,
         colors: [strokeColor]
@@ -183,7 +180,6 @@ export class AreaChartComponent implements OnInit {
             return `${value} / Y${w.globals?.categoryLabels[dataPointIndex]}`
           }
         },
-
         x:{
           show: false
         },
@@ -204,7 +200,7 @@ export class AreaChartComponent implements OnInit {
         showNullDataPoints: true,
         colors: [colors],
         strokeColor: [strokeColor],
-        strokeWidth: 2,
+        strokeWidth: 3,
         hover: {
           size: 9,
         }
