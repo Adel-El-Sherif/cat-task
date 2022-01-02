@@ -11,6 +11,7 @@ import {
   ApexStroke,
   ApexGrid,
 } from "ng-apexcharts";
+import { HelperService } from 'src/app/shared/services/helper/helper.service';
 import { NumberOfPatientPerProducts } from '../../models/number-of-patient-per-products/number-of-patient-per-products';
 
 export type ChartOptions = {
@@ -39,8 +40,8 @@ export class ColumnChartComponent implements OnInit {
   public chartOptions!: Partial<ChartOptions> | any;
   numberOfPatientPerProducts!: NumberOfPatientPerProducts;
   patientPerProducts: any = {
-    name: ['Darzalex', 'Stelara CD', 'Stelara UC', 'Tremfaya PsO', 'Erleada', 'Imbruvica'],
-    total: [10,6,8,2,3,4 ]
+    name: [],
+    total: []
   };
   // booleans 
   initChart: boolean = false;
@@ -49,9 +50,7 @@ export class ColumnChartComponent implements OnInit {
   @Input() set data(data: NumberOfPatientPerProducts | undefined) {
 
     if(data) {
-      this.numberOfPatientPerProducts = data;
-      console.log(this.numberOfPatientPerProducts, 'this.numberOfPatientPerProducts');
-      
+      this.numberOfPatientPerProducts = data;      
       this.prepareChartData();
       this.chartOptions = this.getChartOptions();
       this.initChart = true;
@@ -75,7 +74,9 @@ export class ColumnChartComponent implements OnInit {
   }
 
 
-  constructor() { 
+  constructor(
+    private _HelperService: HelperService
+  ) { 
 
   }
 
@@ -137,11 +138,13 @@ export class ColumnChartComponent implements OnInit {
 
       yaxis: {
         min: 0,
-        max: 10,
-        forceNiceScale: true,
+        max: 10000,
+        // logBase: 2000,
+        tickAmount: 5,
+        // forceNiceScale: true,
         labels : {
           formatter: (value: any) => {
-          return value == 0 ? value : value+'k'
+          return this._HelperService.kFormatter(value);
           },
           style: {
             colors: '#bababa',
@@ -169,4 +172,7 @@ export class ColumnChartComponent implements OnInit {
       },
     };
   }
+
+ 
+
 }
