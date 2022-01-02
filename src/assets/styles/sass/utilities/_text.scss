@@ -1,4 +1,11 @@
-// Font weight and italics
+// Font weight and italics utilities
 .fw-600 {
     font-weight: 600 !important;
 }
+
+
+// color utilities
+.text_secondary {
+    color: $secondaryColor;
+}
+

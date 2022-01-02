@@ -2,11 +2,15 @@
 
    <div class="row">
         <div class="col-lg-6 col-xl-4">
-
             <!-- begin:: Number Of Patient section  -->
             <num-of-patient [data]="mainChart?.number_of_patients"></num-of-patient>
             <!-- end:: Number Of Patient section  -->
-                
+        </div>
+
+        <div class="col-lg-6 col-xl-8">
+            <!-- begin:: Number Of Patients Per Product section  -->
+            <num-of-patient-per-product [data]="mainChart?.patient_per_products"></num-of-patient-per-product>
+            <!-- end:: Number Of Patients Per Product section  -->
         </div>
    </div>
 

@@ -1,4 +1,4 @@
-<section *ngIf="initChart" class="chart-card">
+<section *ngIf="initChart" class="chart-card h-100">
 
     <div class="total-num p-4">
         <h4 class="key">Total Number of Patient</h4>
@@ -31,14 +31,14 @@
 
     <div class="percentage p-4 d-flex flex-column justify-content-end text-end">
 
-        <div class="decrease mb-1 d-flex align-items-center">
+        <div class="decrease mb-1 d-flex align-items-center justify-content-end">
             <span class="me-2 h4 fw-600 mb-0">
                 {{ numberOfPatients?.patients_per_year_percentage }}%
             </span>
             <img src="assets/media/dashboard/chart/decrease.svg" alt="">
         </div>
 
-        <div class="increase d-flex align-items-center">
+        <div class="increase d-flex align-items-center justify-content-end">
             <span class="me-2 h4 fw-600 mb-0">
                 {{ numberOfPatients?.patients_per_year_percentage }}%
             </span>

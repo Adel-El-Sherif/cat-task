@@ -24,16 +24,16 @@
         }
 
         .apexcharts-tooltip-text-y-label {
-            // Stucture Block 
+            // Structure Block 
             display: none;
         }
-    }
 
+        .apexcharts-canvas {
+            width: 100% !important;
 
-    .percentage {
-        // Positioning Block 
-        position: absolute;
-        bottom: 0;
-        right: 0;
+            & > svg  {
+                width: 100% !important;
+            }
+        }
     }
 }

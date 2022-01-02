@@ -1,0 +1,31 @@
+<section *ngIf="initChart" class="chart-card h-100 d-flex flex-column justify-content-between pb-3">
+
+    <div class="total-num p-4">
+        <h2 class="val h1 fw-bold text_secondary">
+            {{ numberOfPatientPerProducts?.total_patients }}
+        </h2>
+        <h4 class="key text_secondary">Patient</h4>
+    </div>
+
+    <!-- begin:: chart  -->
+    <div>
+        <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [dataLabels]="chartOptions.dataLabels"
+        [plotOptions]="chartOptions.plotOptions"
+        [yaxis]="chartOptions.yaxis"
+        [xaxis]="chartOptions.xaxis"
+        [stroke]="chartOptions.stroke"
+        [grid]="chartOptions.grid"
+        [fill]="chartOptions.fill"
+        [annotations]="chartOptions.annotations"
+        [tooltip]="chartOptions.tooltip"
+      ></apx-chart>
+    </div>
+    <!-- end:: chart  -->
+
+    
+
+
+</section>
