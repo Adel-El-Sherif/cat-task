@@ -39,8 +39,8 @@ export class ColumnChartComponent implements OnInit {
   public chartOptions!: Partial<ChartOptions> | any;
   numberOfPatientPerProducts!: NumberOfPatientPerProducts;
   patientPerProducts: any = {
-    name: [],
-    total: []
+    name: ['Darzalex', 'Stelara CD', 'Stelara UC', 'Tremfaya PsO', 'Erleada', 'Imbruvica'],
+    total: [10,6,8,2,3,4 ]
   };
   // booleans 
   initChart: boolean = false;
